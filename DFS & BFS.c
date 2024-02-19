@@ -4,22 +4,27 @@
 #define MAX_SIZE 100
 
 // Depth-First Search (DFS) Algorithm
-void dfs(int graph[][MAX_SIZE], int size, int start, bool visited[]) {
+void dfs(int graph[][MAX_SIZE], int size, int start, bool visited[]) 
+{
     int stack[MAX_SIZE];
     int top = -1;
     int vertex;
 
     stack[++top] = start;
 
-    while (top != -1) {
+    while (top != -1) 
+    {
         vertex = stack[top--];
-
-        if (!visited[vertex]) {
+        
+        if (!visited[vertex]) 
+        {
             visited[vertex] = true;
             printf("%d ", vertex);
 
-            for (int i = size - 1; i >= 0; i--) {
-                if (graph[vertex][i] && !visited[i]) {
+            for (int i = size - 1; i >= 0; i--) 
+            {
+                if (graph[vertex][i] && !visited[i])
+                {
                     stack[++top] = i;
                 }
             }
@@ -28,22 +33,27 @@ void dfs(int graph[][MAX_SIZE], int size, int start, bool visited[]) {
 }
 
 // Breadth-First Search (BFS) Algorithm
-void bfs(int graph[][MAX_SIZE], int size, int start, bool visited[]) {
+void bfs(int graph[][MAX_SIZE], int size, int start, bool visited[]) 
+{
     int queue[MAX_SIZE];
     int front = 0, rear = -1;
     int vertex;
 
     queue[++rear] = start;
 
-    while (front <= rear) {
+    while (front <= rear) 
+    {
         vertex = queue[front++];
 
-        if (!visited[vertex]) {
+        if (!visited[vertex]) 
+        {
             visited[vertex] = true;
             printf("%d ", vertex);
 
-            for (int i = 0; i < size; i++) {
-                if (graph[vertex][i] && !visited[i]) {
+            for (int i = 0; i < size; i++) 
+            {
+                if (graph[vertex][i] && !visited[i]) 
+                {
                     queue[++rear] = i;
                 }
             }
@@ -52,7 +62,7 @@ void bfs(int graph[][MAX_SIZE], int size, int start, bool visited[]) {
 }
 
 int main() {
-    int graph[MAX_SIZE][MAX_SIZE] = {
+    int graph[MAX_SIZE][MAX_SIZE] ={
         {0, 1, 1, 0, 0},
         {1, 0, 0, 1, 1},
         {1, 0, 0, 0, 1},
@@ -68,7 +78,8 @@ int main() {
     printf("\n");
 
     // Resetting visited array for BFS
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
+    {
         visited[i] = false;
     }
 
