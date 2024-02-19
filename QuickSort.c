@@ -1,23 +1,34 @@
 #include<stdio.h>
  int divide(int arr[],int low,int high)
 {
-	int p=arr[high];
-	int i=(low-1);
-	for(int j=low;j<high;j++)
-	{
-		if(arr[j]<=p)
-		{
-			i++;
+	int p=arr[low];
+    int i = low; 
+    int j = high; 
+  
+    while (i < j) 
+    { 
+        while (arr[i] <= p && i <= high - 1) 
+        { 
+            i++; 
+    
+        } 
+  
+        while (arr[j] > p && j >= low + 1) 
+        { 
+            j--; 
+        } 
+        if (i < j) 
+        {
 			int temp=arr[i];
 			arr[i]=arr[j];
 			arr[j]=temp;			
 		}
 	}
-	int temp=arr[i+1];
-	arr[i+1]=arr[high];
-	arr[high]=temp;
+	int temp=arr[low];
+	arr[low]=arr[j];
+	arr[j]=temp;
 
-	return (i+1);
+	return (j);
 		
 }
 
