@@ -9,8 +9,7 @@
 int max (int a, int b) { return (a > b)? a: b; }
 
 
-void harspool( char *str, int size, 
-						int bchar[SIZECHAR])
+void harspool( char *str, int size, int bchar[SIZECHAR])
 {
 	int i;
 
@@ -43,11 +42,9 @@ void search( char *txt, char *pat)
 		{
 			printf("\n pattern occurs at shift = %d", s+1);
 			s += (s+m < n)? m-bchar[txt[s+m]] : 1;
-
 		}
 
 		else
-	
 			s += max(1, j - bchar[txt[s+j]]);
 	}
 }
