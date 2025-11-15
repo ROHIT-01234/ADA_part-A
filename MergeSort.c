@@ -72,10 +72,10 @@ int main()
 	int arr[]={5,8,2,3,4,6,9,3}; 
 	int arr_size = sizeof(arr) / sizeof(arr[0]); 
 
-	printf("Unsorted Array :\n"); 
+	printf("unsorted Array :\n"); 
 	display(arr, arr_size); 
 
-	printf("Sorted Array :\n");
+	printf("sorted Array :\n");
 	mergesort(arr, 0, arr_size - 1); 
 	display(arr, arr_size); 
 }
